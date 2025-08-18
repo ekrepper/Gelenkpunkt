@@ -5,6 +5,11 @@ The patient's name is removed, and the anonymized files can be downloaded either
 
 ---
 
+## Deployed Version
+https://gelenkpunkt-mr-anonymizer.streamlit.app/
+
+---
+
 ## Features
 - Drag & drop DICOM (`.dcm`) file upload
 - Automatic anonymization (removes `PatientName` )
