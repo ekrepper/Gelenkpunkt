@@ -2,14 +2,26 @@ import streamlit as st
 import pydicom as pm
 import io, zipfile, re  # re neu für kleine ID-Validierung
 
+
+
 st.image("MCIxGelenkpunkt.png")
 st.title("DICOM-File Anonymizer")
+st.markdown("""
+**Schritt 1:** Geben Sie die Patienten-ID ein.  
+Diese wird als Ordnername verwendet und sollte mit der Tenodese-Tabelle übereinstimmen.  
+
+**Schritt 2:** Laden Sie die gewünschten DICOM-Dateien hoch (Drag & Drop oder *Browse files*).  
+
+**Schritt 3:** Die Dateien werden automatisch anonymisiert (Patientenname entfernt).  
+Sie können anschließend einzelne anonymisierte Dateien oder alle zusammen als ZIP herunterladen.  
+""")
+
 
 # ✨ Neu: manuelle Patienten-ID
 patient_id_input = st.text_input(
     "Patienten-ID (wird als Ordnername im ZIP verwendet)",
     placeholder="z. B. 12345",
-    help="Erlaubt sind Ziffern - die ID soll mit der PatientenID in der Tenodese-Tabelle übereinstimmen."
+    help="Erlaubt sind Ziffern"
 )
 
 def sanitize_id(pid: str) -> str:
@@ -85,3 +97,4 @@ if uploaded_files:
         mime="application/zip",
         key="dl_zip_all"
     )
+
