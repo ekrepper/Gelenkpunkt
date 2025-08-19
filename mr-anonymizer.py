@@ -13,7 +13,7 @@ Diese wird als Ordnername verwendet und sollte mit der Tenodese-Tabelle überein
 
 **Schritt 2:** Laden Sie die gewünschten DICOM-Dateien hoch (Drag & Drop oder *Browse files*).  
 
-**Schritt 3:** Die Dateien werden automatisch anonymisiert (Patientenname entfernt).  
+**Schritt 3:** Die Dateien werden automatisch anonymisiert (Patientenname wird entfernt).  
 Sie können anschließend einzelne anonymisierte Dateien oder alle zusammen als ZIP herunterladen.  
 """)
 
