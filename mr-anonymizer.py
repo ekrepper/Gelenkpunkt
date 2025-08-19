@@ -4,6 +4,7 @@ import io, zipfile, re  # re neu für kleine ID-Validierung
 
 
 
+st.set_page_config(page_title="Gelenkpunkt - DICOM-File Anonymizer", page_icon="favicon.ico")
 st.image("MCIxGelenkpunkt.png")
 st.title("DICOM-File Anonymizer")
 st.markdown("""
