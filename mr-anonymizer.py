@@ -7,15 +7,17 @@ import io, zipfile, re  # re neu für kleine ID-Validierung
 st.set_page_config(page_title="Gelenkpunkt - DICOM-File Anonymizer", page_icon="favicon.ico")
 st.image("MCIxGelenkpunkt.png")
 st.title("DICOM-File Anonymizer")
-st.markdown("""
-**Schritt 1:** Geben Sie die Patienten-ID ein.  
-Diese wird als Ordnername verwendet und sollte mit der Tenodese-Tabelle übereinstimmen.  
 
-**Schritt 2:** Laden Sie die gewünschten DICOM-Dateien hoch (Drag & Drop oder *Browse files*).  
+with st.expander("Anleitung", expanded=True):
+    st.markdown("""
+    **Schritt 1:** Geben Sie die Patienten-ID ein.  
+    Diese wird als Ordnername verwendet und sollte mit der Tenodese-Tabelle übereinstimmen.  
 
-**Schritt 3:** Die Dateien werden automatisch anonymisiert (Patientenname wird entfernt).  
-Sie können anschließend einzelne anonymisierte Dateien oder alle zusammen als ZIP herunterladen.  
-""")
+    **Schritt 2:** Laden Sie die gewünschten DICOM-Dateien hoch (Drag & Drop oder *Browse files*).  
+
+    **Schritt 3:** Die Dateien werden automatisch anonymisiert (Patientenname wird entfernt).  
+    Sie können anschließend einzelne anonymisierte Dateien oder alle zusammen als ZIP herunterladen.  
+    """)
 
 
 # ✨ Neu: manuelle Patienten-ID
@@ -63,8 +65,7 @@ if uploaded_files:
             # Anonymisieren
             dicom_file.PatientName = "Anonymized"
             # dicom_file.PatientBirthDate = "19000101"
-            # ❌ dicom_file.PatientID = patient_id   # nicht mehr überschreiben!
-
+            
             print(dicom_file.PatientName)       # Debug-Ausgabe
             print(dicom_file.PatientBirthDate)
             print(dicom_file.PatientID)         # Debug-Ausgabe
