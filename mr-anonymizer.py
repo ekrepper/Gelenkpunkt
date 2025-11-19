@@ -61,6 +61,7 @@ if uploaded_files:
 
             # Anonymisieren
             dicom_file.PatientName = "Anonymized"
+            dicom_file.PatientAddress = "Anonymized"
             # dicom_file.PatientBirthDate = "19000101"
             
             print(dicom_file.PatientName)       # Debug-Ausgabe
